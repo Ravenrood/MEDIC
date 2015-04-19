@@ -7,11 +7,11 @@ require_once ('lib/Twig/Autoloader.php');
 
 
 /* ACTIONS */
-$_get = $_GET;
+$_post = $_POST;
 
 $fraza = '';
-if (!empty($_get['fraza'])) {
-    $fraza = $_get['fraza'];
+if (!empty($_post['fraza'])) {
+    $fraza = $_post['fraza'];
 }
 
 Twig_Autoloader::register();

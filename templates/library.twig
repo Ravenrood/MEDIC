@@ -4,7 +4,7 @@
     <h1>MEDIC - Zadanie rekrutacyjne</h1>
     <h2>Zadanie 2 - biblioteka do manipulacji tekstem</h1>
         <br/><br/>
-        <form action="/library.php" method="get">
+        <form action="/library.php" method="post">
             <label for="fraza"/>Wprowadź frazę: </label>
             <input type="text" value="{% if fraza %}{{ fraza }}{% else %}Hello World!{% endif %}" name = "fraza" id="fraza"/>
             <input type="submit" value="Wykonaj" />
