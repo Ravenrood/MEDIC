@@ -1,2 +1,8 @@
 # MEDIC
-Zadanie rekrutacyjne
+
+Uruchomienie projektu:
+
+1. Utworzenie bazy według schematu załączonego w lib/files/Jamel.mwb lub odpalenie zapytań z pliku _info/baza.sql.
+2. Wypełnienie bazy przykładowymi danymi: (można użyć przykładowego pliku _info/dane.sql).
+3. Konfiguracja dostępu do bazy w pliku include/config.php
+4. Zadanie rozwiązane na kolejnych stronach projektu
