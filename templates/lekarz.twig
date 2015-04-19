@@ -1,0 +1,44 @@
+{% include '_header.twig' %}
+{% include '_menu.twig' %}        
+<div class="container">
+
+            <div class="starter-template">
+                <h1>MEDIC - Zadanie rekrutacyjne</h1>
+                <h2>Wyszukaj lekarza</h1>
+                <br/><br/>
+                <form action="/lekarz.php" method="get">
+                <label for="branch"/>Wybierz placówkę: </label>
+                    <select name="branch" id="branch">
+                        <option value="0">---</option>
+                        {% for branch in branches %}
+                            <option value="{{ branch.id_placowki }}" {% if branch.id_placowki == branchId %}selected = "selected"{% endif %}>{{ branch.nazwa_placowki }}</option>
+                        {% endfor %}
+                    </select>
+                    <br/>
+                <label for="service"/>Wybierz usługę: </label>
+                    <select name="service" id="service">
+                        <option value="0">---</option>
+                        {% for service in services %}
+                            <option value="{{ service.id_uslugi }}" {% if service.id_uslugi == serviceId %}selected = "selected"{% endif %}>{{ service.nazwa_uslugi }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Dalej" />
+                </form>
+                    
+                <div class="results">
+                    <br/><br/>
+                    {% if specialists %}
+                        <p class="lead">Lekarze w placówce:</p>
+                        <ul>
+                            {% for specialist in specialists %}
+                                <li>{{specialist.nazwa_lekarza|e}}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p class="lead">Brak Lekarza wykonującego usługę w placówce!</p>
+                    {% endif %}
+                </div>    
+            </div>
+
+        </div><!-- /.container -->
+{% include '_footer.twig' %} 

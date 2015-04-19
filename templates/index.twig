@@ -1,0 +1,44 @@
+{% include '_header.twig' %}
+{% include '_menu.twig' %}        
+
+        <div class="container">
+
+            <div class="starter-template">
+                <h1>MEDIC - Zadanie rekrutacyjne</h1>
+                <h2>Placówka/Usługi/Lekarze</h1>
+                <br/><br/>
+                <form action="/" method="get">
+                <label for="branch"/>Wybierz placówkę: </label>
+                    <select name="branch" id="branch">
+                        {% for branch in branches %}
+                            <option value="{{ branch.id_placowki }}" {% if branch.id_placowki == branchId %}selected = "selected"{% endif %}>{{ branch.nazwa_placowki }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Dalej" />
+                </form>
+                    
+                <div class="results">
+                    <br/><br/>
+                    {% if clinics %}
+                        <p class="lead">Poradnie w placówce:</p>
+                        <ul>
+                            {% for clinic in clinics %}
+                                <li>{{clinic.nazwa_placowki|e}} - Poradnia: {{clinic.nazwa_poradni|e}} - {{clinic.nazwa_lekarza|e}}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    
+                    {% if services %}
+                        <p class="lead">Uslugi wykonywane w placówce:</p>
+                        <ul>
+                            {% for service in services %}
+                                <li>{% if service.id_typ_uslugi == 2 %}<strong>*{% endif %}{{service.nazwa_uslugi|e}}{% if service.id_typ_uslugi == 2 %}</strong> - usługa specjalistyczna{% endif %}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    
+                </div>    
+            </div>
+
+        </div><!-- /.container -->
+{% include '_footer.twig' %}  

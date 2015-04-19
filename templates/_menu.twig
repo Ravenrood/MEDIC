@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MEDIC</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li {% if site == 0 %} class="active"{%endif%}><a href="/">Placówka</a></li>
+                <li {% if site == 1 %} class="active"{%endif%}><a href="lekarz.php">Lekarz</a></li>
+                <li {% if site == 2 %} class="active"{%endif%}><a href="schemat.php">Baza - Schemat</a></li>
+                <li {% if site == 3 %} class="active"{%endif%}><a href="library.php">Zadanie 2</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>

@@ -1,0 +1,28 @@
+{% include '_header.twig' %}
+{% include '_menu.twig' %}        
+<div class="container">
+    <h1>MEDIC - Zadanie rekrutacyjne</h1>
+    <h2>Zadanie 2 - biblioteka do manipulacji tekstem</h1>
+        <br/><br/>
+        <form action="/library.php" method="get">
+            <label for="fraza"/>Wprowadź frazę: </label>
+            <input type="text" value="{% if fraza %}{{ fraza }}{% else %}Hello World!{% endif %}" name = "fraza" id="fraza"/>
+            <input type="submit" value="Wykonaj" />
+        </form>
+
+        <div class="results">
+            <br/><br/>
+            {% if frazaWhole %}
+                <strong>odwróć ciąg znaków:</strong> {{ frazaWhole }}
+            {% endif %}
+            <br/><br/>
+            {% if frazaFirst %}
+                <strong>odwróć ciąg znaków w pierwszym wyrazie:</strong> {{ frazaFirst }}
+            {% endif %}
+            <br/><br/>
+            {% if frazaWholeFirst %}
+                <strong>odwróć ciąg znaków w całości a potem w pierwszym wyrazie:</strong> {{ frazaWholeFirst }}
+            {% endif %}
+        </div>    
+</div><!-- /.container -->
+{% include '_footer.twig' %} 
