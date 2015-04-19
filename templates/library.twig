@@ -23,6 +23,26 @@
             {% if frazaWholeFirst %}
                 <strong>odwróć ciąg znaków w całości a potem w pierwszym wyrazie:</strong> {{ frazaWholeFirst }}
             {% endif %}
-        </div>    
+        </div> 
+        <p>Przykładowy kod użycia biblioteki stringOpr: <br/>
+        <pre>
+            require_once ('lib/stringopr/stringOpr.php');
+            $fraza = 'Hello World';
+            //tworzenie obliektu biblioteki
+            $stringOpr = new stringOpr($fraza);
+
+            //odwracamy frazę w całości
+            $frazaWhole = $stringOpr->reverseWhole();
+
+            echo $frazaWhole;
+        </pre>
+            <br/>
+            Bibliotekę stringOpr można rozbudować dodając do pliku lib/stringopr/stringOpr.php kolejną metodę np.:<br/>
+            <pre>
+            public function addSpot() {
+                return join('.', $this->_stringArray);
+            }
+            </pre>
+        </p>
 </div><!-- /.container -->
 {% include '_footer.twig' %} 
